@@ -16,14 +16,10 @@ if _myzs:internal:checker:command-exist "git"; then
   _myzs:internal:alias "ga" "git add"
 
   _myzs:internal:alias "gcm" "git commit"
-  _myzs:internal:alias "gcm-sign" "git commit -S"
 
   _myzs:internal:alias "gco" "git checkout"
   _myzs:internal:alias "gcob" "git checkout -b"
-  _myzs:internal:alias "gconb" "git checkout -b"
   _myzs:internal:alias "gcoeb" "git checkout --orphan"
-  _myzs:internal:alias "gcod" "git checkout develop"
-  _myzs:internal:alias "gcom" "git checkout master"
 
   # for git version 2.23.0
   _myzs:internal:alias "grs" "git restore"
@@ -37,8 +33,6 @@ if _myzs:internal:checker:command-exist "git"; then
   _myzs:internal:alias "gb" "git branch"
   _myzs:internal:alias "gba" "git branch -a"
   _myzs:internal:alias "gbd" "git branch -D"
-  _myzs:internal:alias "gbm" "git branch --merged"
-  _myzs:internal:alias "gbnm" "git branch --no-merged"
   _myzs:internal:alias "gbr" "git fetch --all --prune" # remove remote branch, If not exist
 
   _myzs:internal:alias "gd" "git diff"
@@ -46,11 +40,6 @@ if _myzs:internal:checker:command-exist "git"; then
 
   _myzs:internal:alias "gt" "git tag"
   _myzs:internal:alias "gtd" "git tag -d"
-  _myzs:internal:alias "gta" "git tag -a"
-  _myzs:internal:alias "gt-sign" "git tag -s"
-
-  _myzs:internal:alias "gr" "git reset"
-  _myzs:internal:alias "grh" "git reset HEAD"
 
   _myzs:internal:alias "gf" "git fetch"
 

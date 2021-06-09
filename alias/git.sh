@@ -1,60 +1,55 @@
 # shellcheck disable=SC1090,SC2148
 
-_myzs:internal:module:initial "$0"
+myzs:module:new "$0"
 
 if _myzs:internal:checker:command-exist "git"; then
   if _myzs:internal:checker:command-exist "hub"; then
     eval "$(hub alias -s)"
   fi
 
-  _myzs:internal:alias "g" "git"
+  alias g="git"
+  alias gi="git init"
+  alias gs="git status"
+  alias ga="git add"
+  alias gcm="git commit"
 
-  _myzs:internal:alias "gi" "git init"
-
-  _myzs:internal:alias "gs" "git status"
-
-  _myzs:internal:alias "ga" "git add"
-
-  _myzs:internal:alias "gcm" "git commit"
-
-  _myzs:internal:alias "gco" "git checkout"
-  _myzs:internal:alias "gcob" "git checkout -b"
-  _myzs:internal:alias "gcoeb" "git checkout --orphan"
+  alias gco="git checkout"
+  alias gcob="git checkout -b"
+  alias gcoeb="git checkout --orphan"
 
   # for git version 2.23.0
-  _myzs:internal:alias "grs" "git restore"
-  _myzs:internal:alias "grss" "git restore --staged"
+  alias grs="git restore"
+  alias grss="git restore --staged"
 
   # for git version 2.23.0
-  _myzs:internal:alias "gsw" "git switch"
+  alias gsw="git switch"
 
-  _myzs:internal:alias "gm" "git merge"
+  alias gm="git merge"
+  alias gf="git fetch"
 
-  _myzs:internal:alias "gb" "git branch"
-  _myzs:internal:alias "gba" "git branch -a"
-  _myzs:internal:alias "gbd" "git branch -D"
-  _myzs:internal:alias "gbr" "git fetch --all --prune" # remove remote branch, If not exist
+  alias gb="git branch"
+  alias gba="git branch -a"
+  alias gbd="git branch -D"
+  alias gbr="git fetch --all --prune" # remove remote branch, If not exist
 
-  _myzs:internal:alias "gd" "git diff"
-  _myzs:internal:alias "gdi" "git diff -w --ignore-all-space"
+  alias gd="git diff"
+  alias gdi="git diff -w --ignore-all-space"
 
-  _myzs:internal:alias "gt" "git tag"
-  _myzs:internal:alias "gtd" "git tag -d"
+  alias gt="git tag"
+  alias gtd="git tag -d"
 
-  _myzs:internal:alias "gf" "git fetch"
+  alias gp="git push"
+  alias gP="git pull"
 
-  _myzs:internal:alias "gp" "git push"
-  _myzs:internal:alias "gP" "git pull"
+  alias gsp="git stash push"
+  alias gsP="git stash pop"
 
-  _myzs:internal:alias "gsp" "git stash push"
-  _myzs:internal:alias "gsP" "git stash pop"
-
-  _myzs:internal:alias "gl" "git log --graph"                       # log with graph and format in git config
-  _myzs:internal:alias "gl-sign" "git log --graph --show-signature" # log with show sign information
-  _myzs:internal:alias "gla" "git log --graph --all"                # log all branch and commit
-  _myzs:internal:alias "glao" "git log --graph --all --oneline"     # log with oneline format
-  _myzs:internal:alias "glo" "git log --graph --oneline"            # log all in oneline format
-  _myzs:internal:alias "glss" "git log --graph --stat --summary"    # log with stat and summary
+  alias gl="git log --graph"                       # log with graph and format in git config
+  alias gl-sign="git log --graph --show-signature" # log with show sign information
+  alias gla="git log --graph --all"                # log all branch and commit
+  alias glao="git log --graph --all --oneline"     # log with oneline format
+  alias glo="git log --graph --oneline"            # log all in oneline format
+  alias glss="git log --graph --stat --summary"    # log with stat and summary
 
   ggc() {
     if ls package.json >/dev/null 2>&1 && grep -q "\"commit\":" <"package.json" >/dev/null 2>&1; then
@@ -68,5 +63,5 @@ if _myzs:internal:checker:command-exist "git"; then
     fi
   }
 
-  _myzs:internal:alias "cm" "ggc"
+  alias cm="ggc"
 fi
